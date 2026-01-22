@@ -1,5 +1,5 @@
 ---
-title: Games I have made
+title: Tam's Website
 date: 2021-12-18T11:10:36+08:00
 draft: false
 language: en
@@ -8,50 +8,57 @@ description: My Games
 <script src="https://cdn.tailwindcss.com"></script>
 <head>
   <div class="relative my-4">
+    <!--Title-->
+    <div class="ml-[-700px] mb-[150px]">
+      <svg width="650px" height="80px">
+          <rect width="650px" height="80px" fill="black"></rect>
+          <text class="font-semibold text-4xl" x="295" y="51" fill="white">Games I Have Made</text>
+      </svg>
+    </div>
     <div class="lg:mx-auto lg:max-w-7xl lg:items-start lg:px-8">
-        <div class="absolute select-none
-          top-4 left-4
-          sm:top-10 sm:left-10
-          md:top-15 md:left-15
-          lg:top-25 lg:left-25">
-          <div id="container-for-ui-first" class="hidden">
-            <p class="font-semibold text-4xl">Game 1</p>
-            <div class="flex justify-items-center">
-              <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 1...</p>
-            </div>
-          </div>
-          <div id="container-for-ui-second" class="hidden">
-          <p class="font-semibold text-4xl">Game 2</p>
-            <div class="flex justify-items-center">
-              <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 2...</p>
-            </div>
-          </div>
-          <div id="container-for-ui-first" class="hidden">
-          <p class="font-semibold text-4xl">Game 3</p>
-            <div class="flex justify-items-center">
-              <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 3...</p>
-            </div>
-          </div>
-          <div id="container-for-ui-first" class="hidden">
-          <p class="font-semibold text-4xl">Game 4</p>
-            <div class="flex justify-items-center">
-              <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 4...</p>
-            </div>
-          </div>
-          <div id="container-for-ui-first" class="hidden">
-          <p class="font-semibold text-4xl">Game 5</p>
-            <div class="flex justify-items-center">
-              <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 5...</p>
-            </div>
-          </div>
-          <div id="container-for-ui-first" class="hidden">
-          <p class="font-semibold text-4xl">Game 6</p>
-            <div class="flex justify-items-center">
-              <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 6...</p>
-            </div>
+      <div class="absolute select-none
+        top-4 left-4
+        sm:top-10 sm:left-10
+        md:top-15 md:left-15
+        lg:top-25 lg:left-25">
+        <div id="container-for-ui-first" class="hidden">
+          <p class="font-semibold text-4xl">Game 1</p>
+          <div class="flex justify-items-center">
+            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 1...</p>
           </div>
         </div>
-        <canvas id="sqr" class="mx-auto block" width="1260" height="870"></canvas>
+        <div id="container-for-ui-second" class="hidden">
+        <p class="font-semibold text-4xl">Game 2</p>
+          <div class="flex justify-items-center">
+            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 2...</p>
+          </div>
+        </div>
+        <div id="container-for-ui-first" class="hidden">
+        <p class="font-semibold text-4xl">Game 3</p>
+          <div class="flex justify-items-center">
+            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 3...</p>
+          </div>
+        </div>
+        <div id="container-for-ui-first" class="hidden">
+        <p class="font-semibold text-4xl">Game 4</p>
+          <div class="flex justify-items-center">
+            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 4...</p>
+          </div>
+        </div>
+        <div id="container-for-ui-first" class="hidden">
+        <p class="font-semibold text-4xl">Game 5</p>
+          <div class="flex justify-items-center">
+            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 5...</p>
+          </div>
+        </div>
+        <div id="container-for-ui-first" class="hidden">
+        <p class="font-semibold text-4xl">Game 6</p>
+          <div class="flex justify-items-center">
+            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 6...</p>
+          </div>
+        </div>
+      </div>
+      <canvas id="sqr" class="mx-auto block" width="1260" height="870"></canvas>
     </div>
   </div>
 </head>
