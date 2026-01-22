@@ -1,0 +1,13 @@
+For my games cube section
+
+Logic for Raycaster and stuff below:
+1. Raycaster is lazer on cube
+2. Raycaster gives number based on face it's hitting
+
+For Text on the left to appear:
+1. Raycatser value = value for side #
+2. document.getElementById('container-for-ui-_____').classList.remove('hidden');
+
+For Text on the left to dissapear:
+1. Raycaster value =/= value for side #
+2. document.getElementById('container-for-ui-_____').classList.add('hidden');
