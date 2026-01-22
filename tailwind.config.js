@@ -6,6 +6,12 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      dropShadow: {
+        '3xl': [ //hirozontal offset, vertical offset, radius, colour
+          '0 4px 3px rgba(0, 0, 0, 0.5)', //smaller shadow
+          '0 10px 10px rgba(0, 0, 0, 0.25)' //bigger shadow
+        ]
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
@@ -48,6 +54,13 @@ module.exports = {
           800: '#1E2024',
           900: '#050506'
         },
+        'tamcolor': {  
+          color1: '#F4F4F9',
+          color2: '#B8DBD9',
+          color3: '#586F7C',
+          color4: '#2F4550',
+          color5: '#000000',
+        }
         // To change these, use https://www.tailwindshades.com/ with https://tailwindcss.com/docs/customizing-colors or create your own custom colors.
       },
       lineHeight: {
