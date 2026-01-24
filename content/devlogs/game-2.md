@@ -1,6 +1,6 @@
 ---
-title: "Blog Post 1"
-date: 2022-06-18T11:10:36+08:00
+title: "Devlog (name of game)"
+date: 2021-12-18T11:10:36+08:00
 draft: false
 language: en
 featured_image: ../assets/images/featured/featured-img-placeholder.png
@@ -8,8 +8,8 @@ summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, od
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, odio nec venenatis lacinia, lacus lectus varius nisi, in tristique mi purus ut libero. Vestibulum vel convallis felis. Ut finibus lorem vestibulum lobortis rhoncus.
 author: TailBliss
 authorimage: ../assets/images/global/author.webp
-categories: Blog
-tags: Blog
+categories: blog
+tags: blog
 ---
 __Advertisement :smile:__
 
@@ -186,7 +186,7 @@ see [how to change output](https://github.com/markdown-it/markdown-it-emoji#chan
 
 ### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
 
-- X^2^
+- 19^th^
 - H~2~O
 
 
@@ -255,4 +255,3 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 ::: warning
 *here be dragons*
 :::
-
