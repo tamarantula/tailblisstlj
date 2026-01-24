@@ -16,42 +16,42 @@ description: My Games
       </svg>
     </div>
     <div class="lg:mx-auto lg:max-w-7xl lg:items-start lg:px-8">
-      <div class="absolute select-none
+      <div class="absolute select-none pointer-events-none
         top-4 left-4
         sm:top-10 sm:left-10
         md:top-15 md:left-15
         lg:top-25 lg:left-25">
-        <div id="container-for-ui-first" class="hidden">
+        <div id="container-for-ui-first" class="invisible duration-700">
           <p class="font-semibold text-4xl">Game 1</p>
           <div class="flex justify-items-center">
             <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 1...</p>
           </div>
         </div>
-        <div id="container-for-ui-second" class="hidden">
+        <div id="container-for-ui-second" class="invisible duration-700">
         <p class="font-semibold text-4xl">Game 2</p>
           <div class="flex justify-items-center">
             <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 2...</p>
           </div>
         </div>
-        <div id="container-for-ui-first" class="hidden">
+        <div id="container-for-ui-third" class="invisible duration-700">
         <p class="font-semibold text-4xl">Game 3</p>
           <div class="flex justify-items-center">
             <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 3...</p>
           </div>
         </div>
-        <div id="container-for-ui-first" class="hidden">
+        <div id="container-for-ui-fourth" class="invisible duration-700">
         <p class="font-semibold text-4xl">Game 4</p>
           <div class="flex justify-items-center">
             <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 4...</p>
           </div>
         </div>
-        <div id="container-for-ui-first" class="hidden">
+        <div id="container-for-ui-fifth" class="invisible duration-700">
         <p class="font-semibold text-4xl">Game 5</p>
           <div class="flex justify-items-center">
             <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 5...</p>
           </div>
         </div>
-        <div id="container-for-ui-first" class="hidden">
+        <div id="container-for-ui-sixth" class="invisible duration-700">
         <p class="font-semibold text-4xl">Game 6</p>
           <div class="flex justify-items-center">
             <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 6...</p>
@@ -85,16 +85,13 @@ scene.background = null; //makes it so there is no background, resulting in the 
 
 //Get canvas element FIRST
 const canvas = document.getElementById('sqr');
-
-//My Games UI
-/*
-const UIone = document.getElementById("container-for-ui-first");  //add the name from the bottom section on the left side, the right one is from the html
-const UItwo = document.getElementById("container-for-ui-second");
-const UIthree = document.getElementById("container-for-ui-third");
-const UIfour = document.getElementById("container-for-ui-fourth");
-const UIfive = document.getElementById("container-for-ui-fifth");
-const UIsix = document.getElementById("container-for-ui-sixth");
-*/
+//Get My Games Info UI
+const firstgame = document.getElementById("container-for-ui-first");
+const secondgame = document.getElementById("container-for-ui-second");
+const thirdgame = document.getElementById("container-for-ui-third");
+const fourthgame = document.getElementById("container-for-ui-fourth");
+const fifthgame = document.getElementById("container-for-ui-fifth");
+const sixthgame = document.getElementById("container-for-ui-sixth");
 
 //Define camera placement
 const fov = 40;
@@ -108,17 +105,18 @@ const controls = new OrbitControls(camera, canvas);
 controls.target.set(0, 5, 0);
 controls.enableZoom = false;
 controls.enablePan = false;
-/*
 controls.addEventListener('start', function(){   //for removing image
-  UIone.replace("visible", "invisible");
-  UItwo.replace("visible", "invisible");
-  UIthree.replace("visible", "invisible");
-  UIfour.replace("visible", "invisible");
-  UIfive.replace("visible", "invisible");
-  UIsix.replace("visible", "invisible");
+  firstgame.replace("visible", "invisible");
+  secondgame.replace("visible", "invisible");
+  thirdgame.replace("visible", "invisible");
+  fourthgame.replace("visible", "invisible");
+  fifthgame.replace("visible", "invisible");
+  sixthgame.replace("visible", "invisible");
 })
-*/
 controls.update();
+
+//Making previous face 0
+let previousFace = null;
 
 //Create lighting
 //Defining (for both lights)
@@ -250,34 +248,53 @@ function dblclick (event) {
   if (intersections.length > 0) {
     //Accessing the faceIndex values
     const faceIndexValue = intersections[0].faceIndex;
+    const previousFace = faceIndexValue; 
+
     const baseURL = "{{ .Site.BaseURL }}";
     //Main: Redirection
-    console.log(`Clicking on face: ${faceIndexValue}`);
-    /*
+    //console.log(`Clicking on face: ${faceIndexValue}`);
     //For "1" face
     if (faceIndexValue == 191) {
-      //const UIone = document.getElementById("container-for-ui-first");
+      firstgame.classList.replace("invisible", "visible");
+      if (previousFace == 191) {
+        window.location.href = baseURL + "/devlogs/game-1/";
+      }
     }
     //For "2" face 
     if (faceIndexValue == 49) {
-      UItwo.classList.replace("invisible", "visible");
+      secondgame.classList.replace("invisible", "visible");
+      if (previousFace == 49) {
+        window.location.href = baseURL + "/devlogs/game-2/";
+      }
     }
     //For "3" face 
     if (faceIndexValue == 26) {
-      UIthree.classList.replace("invisible", "visible"); 
+      thirdgame.classList.replace("invisible", "visible");
+      if (previousFace == 26) {
+        window.location.href = baseURL + "/devlogs/game-3/";
+      }
     }
     //For "4" face 
     if (faceIndexValue == 159) {
-      UIfour.classList.replace("invisible", "visible");
+      fourthgame.classList.replace("invisible", "visible");
+      if (previousFace == 159) {
+        window.location.href = baseURL + "/devlogs/game-4/";
+      }
     }
     //For "5" face 
     if (faceIndexValue == 147) {
-      UIfive.classList.replace("invisible", "visible");
+      fifthgame.classList.replace("invisible", "visible");
+      if (previousFace == 147) {
+        window.location.href = baseURL + "/devlogs/game-5/";
+      }
     }
     //For "6" face 
-    if (faceIndexValue == 31) {
-      UIsix.classList.replace("invisible", "visible");
-  }*/
+    if (faceIndexValue == 191) {
+      sixthgame.classList.replace("invisible", "visible");
+      if (previousFace == 191) {
+        window.location.href = baseURL + "/devlogs/game-6/";
+      }
+    }
   }
   else {
     console.log("No intersections found with either method!!");

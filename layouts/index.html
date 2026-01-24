@@ -260,7 +260,6 @@ scene.background = null; //makes it so there is no background, resulting in the 
 
 //Get canvas element FIRST
 const canvas = document.getElementById('tri');
-
 //Get About Me UI
 const aboutme = document.getElementById("container-for-ui-aboutme");
 
@@ -338,10 +337,10 @@ mtlLoader.load('/3DObjects/NavTri.mtl', (mtl) => {
         animate();
     });
 });
+
 //Creating Raycaster
 const raycaster = new THREE.Raycaster();
 canvas.addEventListener('dblclick', dblclick);
-
 
 //Clicking on Face event
 function dblclick (event) {
@@ -366,7 +365,7 @@ function dblclick (event) {
     //Calculate objects intersecting the picking ray
     const intersections = raycaster.intersectObjects(scene.children, true);
     if (intersections.length > 0) {
-        console.log('Intesection detected! FaceIndex:', intersections[0].faceIndex);
+        //console.log('Intesection detected! FaceIndex:', intersections[0].faceIndex);
         //Accessing the faceIndex values
         const faceIndexValue = intersections[0].faceIndex;
         //Main: Redirection
