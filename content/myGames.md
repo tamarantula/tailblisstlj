@@ -106,17 +106,14 @@ controls.target.set(0, 5, 0);
 controls.enableZoom = false;
 controls.enablePan = false;
 controls.addEventListener('start', function(){   //for removing image
-  firstgame.replace("visible", "invisible");
-  secondgame.replace("visible", "invisible");
-  thirdgame.replace("visible", "invisible");
-  fourthgame.replace("visible", "invisible");
-  fifthgame.replace("visible", "invisible");
-  sixthgame.replace("visible", "invisible");
+  firstgame.classList.replace("visible", "invisible");
+  secondgame.classList.replace("visible", "invisible");
+  thirdgame.classList.replace("visible", "invisible");
+  fourthgame.classList.replace("visible", "invisible");
+  fifthgame.classList.replace("visible", "invisible");
+  sixthgame.classList.replace("visible", "invisible");
 })
 controls.update();
-
-//Making previous face 0
-let previousFace = null;
 
 //Create lighting
 //Defining (for both lights)
@@ -150,9 +147,19 @@ mtlLoader.load('/3DObjects/NavSqr.mtl', (mtl) => {
 
     root.position.sub(center);
     scene.add(root);
-    
+
     //Add this line to store it globally
     loadedMesh = root;
+
+    //Add wireframe to visualize triangle edges
+    root.traverse((child) => {
+      if (child.isMesh) {
+        const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
+        const wireframeMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00, linewidth: 2 });
+        const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
+        child.add(wireframe);
+      }
+    });
 
     /*
     //Debug code:
@@ -181,6 +188,10 @@ mtlLoader.load('/3DObjects/NavSqr.mtl', (mtl) => {
   });
 });
 
+//This is for face cube logic at bottom of code
+let previousFace = null;
+
+//This is for the code below
 let lastFaceIndex = null;
 
 //Face detection functions
@@ -221,7 +232,7 @@ function animate() {
 
 //Initializing stuff
 const raycaster = new THREE.Raycaster(); //Creating Raycaster
-document.addEventListener('dblclick', dblclick); //Listens for double mouse click
+canvas.addEventListener('dblclick', dblclick); //Listens for double mouse click
 //const centface = new THREE.Vector2(0, 0); //Center of screen - for raycaster
 
 //Clicking on Face event
@@ -236,68 +247,149 @@ function dblclick (event) {
   //Calculate pointer position
   const coords = new THREE.Vector2(
       ((event.clientX - rect.left) / rect.width) * 2 - 1,
-      -((event.clientY - rect.top) / rect.height) * 2 - 1,
+      -(((event.clientY - rect.top) / rect.height) * 2 - 1),
   ); 
 
   //Return
   raycaster.setFromCamera(coords, camera);
   
   //Calculate objects intersecting the picking ray - Raycast against the group AND its children (recursive = true)
-  const intersections = raycaster.intersectObjects([loadedMesh], true); 
+  const intersections = raycaster.intersectObjects(scene.children, true); //[loadedMesh]
   
   if (intersections.length > 0) {
     //Accessing the faceIndex values
-    const faceIndexValue = intersections[0].faceIndex;
-    const previousFace = faceIndexValue; 
+    const faceIndexValue = intersections[0].faceIndex; 
 
     const baseURL = "{{ .Site.BaseURL }}";
     //Main: Redirection
-    //console.log(`Clicking on face: ${faceIndexValue}`);
+    console.log(`Clicking on face: ${faceIndexValue}`);
     //For "1" face
-    if (faceIndexValue == 191) {
-      firstgame.classList.replace("invisible", "visible");
-      if (previousFace == 191) {
-        window.location.href = baseURL + "/devlogs/game-1/";
+    if ([8, 9].includes(faceIndexValue)) {
+      if ([8, 9].includes(previousFace)) { //second click
+        window.location.href = baseURL + "/game-1/";
+      }
+      else { //first click
+        firstgame.classList.replace("invisible", "visible");
+        previousFace = faceIndexValue;
       }
     }
     //For "2" face 
-    if (faceIndexValue == 49) {
-      secondgame.classList.replace("invisible", "visible");
-      if (previousFace == 49) {
-        window.location.href = baseURL + "/devlogs/game-2/";
+    else if ([48, 49].includes(faceIndexValue)) {
+      if ([48, 49].includes(previousFace)) {
+        window.location.href = baseURL + "/game-2/";
+      }
+      else {
+        secondgame.classList.replace("invisible", "visible");
+        previousFace = faceIndexValue;
       }
     }
     //For "3" face 
-    if (faceIndexValue == 26) {
-      thirdgame.classList.replace("invisible", "visible");
-      if (previousFace == 26) {
-        window.location.href = baseURL + "/devlogs/game-3/";
+    else if ([28, 29].includes(faceIndexValue)) {
+      if ([28, 29].includes(previousFace)) {
+        window.location.href = baseURL + "/game-3/";
+      }
+      else {
+        thirdgame.classList.replace("invisible", "visible");
+        previousFace = faceIndexValue;
       }
     }
     //For "4" face 
-    if (faceIndexValue == 159) {
-      fourthgame.classList.replace("invisible", "visible");
-      if (previousFace == 159) {
-        window.location.href = baseURL + "/devlogs/game-4/";
+    else if ([18, 19].includes(faceIndexValue)) {
+      if ([18, 19].includes(previousFace)) {
+        window.location.href = baseURL + "/game-4/";
+      }
+      else {
+        fourthgame.classList.replace("invisible", "visible");
+        previousFace = faceIndexValue;
       }
     }
     //For "5" face 
-    if (faceIndexValue == 147) {
-      fifthgame.classList.replace("invisible", "visible");
-      if (previousFace == 147) {
+    else if ([58, 59].includes(faceIndexValue)) {
+      if ([58, 59].includes(previousFace)) {
         window.location.href = baseURL + "/devlogs/game-5/";
+      }
+      else {
+        fifthgame.classList.replace("invisible", "visible");
+        previousFace = faceIndexValue;
       }
     }
     //For "6" face 
-    if (faceIndexValue == 191) {
-      sixthgame.classList.replace("invisible", "visible");
-      if (previousFace == 191) {
+    else if ([30, 31].includes(faceIndexValue)) {
+      if ([30, 31].includes(previousFace)) {
         window.location.href = baseURL + "/devlogs/game-6/";
       }
+      else {
+        sixthgame.classList.replace("invisible", "visible");
+        previousFace = faceIndexValue;
+      }
+      /*
+          if (faceIndexValue == [8, 9]) {
+      if (previousFace == [8, 9]) { //second click
+        window.location.href = baseURL + "/game-1/";
+      }
+      else { //first click
+        firstgame.classList.replace("invisible", "visible");
+        previousFace = [8, 9];
+      }
+    }
+    //For "2" face 
+    else if (faceIndexValue == [48, 49]) {
+      if (previousFace == [48, 49]) {
+        window.location.href = baseURL + "/game-2/";
+      }
+      else {
+        secondgame.classList.replace("invisible", "visible");
+        previousFace = [48, 49];
+      }
+    }
+    //For "3" face 
+    else if (faceIndexValue == [28, 29]) {
+      if (previousFace == [28, 29]) {
+        window.location.href = baseURL + "/game-3/";
+      }
+      else {
+        thirdgame.classList.replace("invisible", "visible");
+        previousFace = [28, 29];
+      }
+    }
+    //For "4" face 
+    else if (faceIndexValue == [18, 19]) {
+      if (previousFace == [18, 19]) {
+        window.location.href = baseURL + "/game-4/";
+      }
+      else {
+        fourthgame.classList.replace("invisible", "visible");
+        previousFace = [18, 19];
+      }
+    }
+    //For "5" face 
+    else if (faceIndexValue == [58, 59]) {
+      if (previousFace == [58, 59]) {
+        window.location.href = baseURL + "/devlogs/game-5/";
+      }
+      else {
+        fifthgame.classList.replace("invisible", "visible");
+        previousFace = [58, 59];
+      }
+    }
+    //For "6" face 
+    else if (faceIndexValue == [30, 31]) {
+      if (previousFace == [30, 31]) {
+        window.location.href = baseURL + "/devlogs/game-6/";
+      }
+      else {
+        sixthgame.classList.replace("invisible", "visible");
+        previousFace = [30, 31];
+      }
+      */
+    }
+    else {
+      previousFace = null; //resets if clicking a different face
     }
   }
   else {
     console.log("No intersections found with either method!!");
+    previousFace = null;
   }
 }
 </script>
