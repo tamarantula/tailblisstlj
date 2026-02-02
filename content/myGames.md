@@ -7,59 +7,68 @@ description: My Games
 ---
 <script src="https://cdn.tailwindcss.com"></script>
 <head>
-  <div class="relative my-4">
-    <!--Title-->
-    <div class="ml-[-700px] mb-[150px]">
-      <svg width="650px" height="80px">
-          <rect width="650px" height="80px" fill="black"></rect>
-          <text class="font-semibold text-4xl" x="295" y="51" fill="white">Games I Have Made</text>
-      </svg>
-    </div>
-    <div class="lg:mx-auto lg:max-w-7xl lg:items-start lg:px-8">
+  <!--Title-->
+  <div class="relative mb-[150px] w-screen" style="margin-left: calc(-50vw + 50%);">
+    <svg width="650px" height="80px" class="drop-shadow-3xl">
+        <rect width="650px" height="80px" fill="black"></rect>
+        <text class="font-semibold text-4xl" x="295" y="51" fill="white">Games I Have Made</text>
+    </svg>
+  </div>
+  <!--Center Container-->
+  <div class="relative w-screen flex" style="margin-left: calc(-50vw + 50%);">
+    <!--Text Boxes UI (popout)-->
+    <div class="flex-1 relative">
       <div class="absolute select-none pointer-events-none
-        top-4 left-4
-        sm:top-10 sm:left-10
-        md:top-15 md:left-15
-        lg:top-25 lg:left-25">
-        <div id="container-for-ui-first" class="invisible duration-700">
-          <p class="font-semibold text-4xl">Game 1</p>
-          <div class="flex justify-items-center">
-            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 1...</p>
+        top-2 left-2
+        sm:top-5 sm:left-5
+        md:top-10 md:left-10
+        lg:top-20 lg:left-20">
+        <div id="container-for-ui-first" class="invisible absolute top-0 left-0 duration-700">
+          <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
+          <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
+            <p class="font-semibold text-4xl text-center">Game 1</p>
+            <p class="font-semibold text-2xl pt-2 p-0 m-0">Blah Blah Blah 1...</p>
           </div>
         </div>
-        <div id="container-for-ui-second" class="invisible duration-700">
-        <p class="font-semibold text-4xl">Game 2</p>
-          <div class="flex justify-items-center">
-            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 2...</p>
+        <div id="container-for-ui-second" class="invisible absolute top-0 left-0 duration-700">
+          <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
+          <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
+            <p class="font-semibold text-4xl text-center">Game 2</p>
+            <p class="font-semibold text-2xl pt-2">Blah Blah Blah 2...</p>
           </div>
         </div>
-        <div id="container-for-ui-third" class="invisible duration-700">
-        <p class="font-semibold text-4xl">Game 3</p>
-          <div class="flex justify-items-center">
-            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 3...</p>
+        <div id="container-for-ui-third" class="invisible absolute top-0 left-0 duration-700">
+          <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
+          <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
+            <p class="font-semibold text-4xl text-center">Game 3</p>
+            <p class="font-semibold text-2xl pt-2">Blah Blah Blah 3...</p>
           </div>
         </div>
-        <div id="container-for-ui-fourth" class="invisible duration-700">
-        <p class="font-semibold text-4xl">Game 4</p>
-          <div class="flex justify-items-center">
-            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 4...</p>
+        <div id="container-for-ui-fourth" class="invisible absolute top-0 left-0 duration-700">
+          <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
+          <div class="relative z-10 w-[225px] h-"120px] p-4 not-prose">
+            <p class="font-semibold text-4xl text-center">Game 4</p>
+            <p class="font-semibold text-2xl pt-2">Blah Blah Blah 4...</p>
           </div>
         </div>
-        <div id="container-for-ui-fifth" class="invisible duration-700">
-        <p class="font-semibold text-4xl">Game 5</p>
-          <div class="flex justify-items-center">
-            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 5...</p>
+        <div id="container-for-ui-fifth" class="invisible absolute top-0 left-0 duration-700">
+          <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
+          <div class="relative z-10 w-[225px] h-"120px] p-4 not-prose">
+            <p class="font-semibold text-4xl text-center">Game 5</p>
+            <p class="font-semibold text-2xl pt-2">Blah Blah Blah 5...</p>
           </div>
         </div>
-        <div id="container-for-ui-sixth" class="invisible duration-700">
-        <p class="font-semibold text-4xl">Game 6</p>
-          <div class="flex justify-items-center">
-            <p class="text-center font-semibold text-2xl pt-2">Blah Blah Blah 6...</p>
+        <div id="container-for-ui-sixth" class="invisible absolute top-0 left-0 duration-700">
+          <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
+          <div class="relative z-10 w-[225px] h-[335px] p-4 not-prose">
+            <p class="font-semibold text-4xl text-center">Game 6</p>
+            <p class="font-semibold text-2xl pt-2">Blah Blah Blah 6...</p>
           </div>
         </div>
       </div>
-      <canvas id="sqr" class="mx-auto block" width="1260" height="870"></canvas>
     </div>
+    <!--3D Cube-->
+    <canvas id="sqr" class="block flex-shrink-0" width="1260" height="870"></canvas>
   </div>
 </head>
 
@@ -152,6 +161,7 @@ mtlLoader.load('/3DObjects/NavSqr.mtl', (mtl) => {
     loadedMesh = root;
 
     //Add wireframe to visualize triangle edges
+    /*
     root.traverse((child) => {
       if (child.isMesh) {
         const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
@@ -160,6 +170,7 @@ mtlLoader.load('/3DObjects/NavSqr.mtl', (mtl) => {
         child.add(wireframe);
       }
     });
+    */
 
     /*
     //Debug code:
