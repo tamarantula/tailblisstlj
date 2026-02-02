@@ -23,42 +23,42 @@ description: My Games
         sm:top-5 sm:left-5
         md:top-10 md:left-10
         lg:top-20 lg:left-20">
-        <div id="container-for-ui-first" class="invisible absolute top-0 left-0 duration-700">
+        <div id="container-for-ui-first" class="invisible absolute top-0 left-0">
           <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
           <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
             <p class="font-semibold text-4xl text-center">Game 1</p>
             <p class="font-semibold text-2xl pt-2 p-0 m-0">Blah Blah Blah 1...</p>
           </div>
         </div>
-        <div id="container-for-ui-second" class="invisible absolute top-0 left-0 duration-700">
+        <div id="container-for-ui-second" class="invisible absolute top-0 left-0">
           <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
           <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
             <p class="font-semibold text-4xl text-center">Game 2</p>
             <p class="font-semibold text-2xl pt-2">Blah Blah Blah 2...</p>
           </div>
         </div>
-        <div id="container-for-ui-third" class="invisible absolute top-0 left-0 duration-700">
+        <div id="container-for-ui-third" class="invisible absolute top-0 left-0">
           <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
           <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
             <p class="font-semibold text-4xl text-center">Game 3</p>
             <p class="font-semibold text-2xl pt-2">Blah Blah Blah 3...</p>
           </div>
         </div>
-        <div id="container-for-ui-fourth" class="invisible absolute top-0 left-0 duration-700">
+        <div id="container-for-ui-fourth" class="invisible absolute top-0 left-0">
           <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
-          <div class="relative z-10 w-[225px] h-"120px] p-4 not-prose">
+          <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
             <p class="font-semibold text-4xl text-center">Game 4</p>
             <p class="font-semibold text-2xl pt-2">Blah Blah Blah 4...</p>
           </div>
         </div>
-        <div id="container-for-ui-fifth" class="invisible absolute top-0 left-0 duration-700">
+        <div id="container-for-ui-fifth" class="invisible absolute top-0 left-0">
           <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
-          <div class="relative z-10 w-[225px] h-"120px] p-4 not-prose">
+          <div class="relative z-10 w-[225px] h-[120px] p-4 not-prose">
             <p class="font-semibold text-4xl text-center">Game 5</p>
             <p class="font-semibold text-2xl pt-2">Blah Blah Blah 5...</p>
           </div>
         </div>
-        <div id="container-for-ui-sixth" class="invisible absolute top-0 left-0 duration-700">
+        <div id="container-for-ui-sixth" class="invisible absolute top-0 left-0">
           <svg width="225px" height="120px" class="drop-shadow-3xl absolute top-0 left-0"><rect width="225px" height="120px" fill="#F4F4F9"></rect></svg>
           <div class="relative z-10 w-[225px] h-[335px] p-4 not-prose">
             <p class="font-semibold text-4xl text-center">Game 6</p>
