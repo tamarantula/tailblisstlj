@@ -271,63 +271,62 @@ function dblclick (event) {
     //Accessing the faceIndex values
     const faceIndexValue = intersections[0].faceIndex; 
 
-    const baseURL = "{{ .Site.BaseURL }}";
-    //Main: Redirection
-    console.log(`Clicking on face: ${faceIndexValue}`);
-    //For "1" face
+    //console.log(`Clicking on face: ${faceIndexValue}`);
+    //Main: Redirection to devlog pages
+    //1st Game
     if ([8, 9].includes(faceIndexValue)) {
       if ([8, 9].includes(previousFace)) { //second click
-        window.location.href = baseURL + "/game-1/";
+        window.location.href = "/devlogs/game-1/";
       }
       else { //first click
         firstgame.classList.replace("invisible", "visible");
         previousFace = faceIndexValue;
       }
     }
-    //For "2" face 
+    //2nd Game
     else if ([48, 49].includes(faceIndexValue)) {
       if ([48, 49].includes(previousFace)) {
-        window.location.href = baseURL + "/game-2/";
+        window.location.href = "/devlogs/game-2/";
       }
       else {
         secondgame.classList.replace("invisible", "visible");
         previousFace = faceIndexValue;
       }
     }
-    //For "3" face 
+    //3rd Game
     else if ([28, 29].includes(faceIndexValue)) {
       if ([28, 29].includes(previousFace)) {
-        window.location.href = baseURL + "/game-3/";
+        window.location.href = "/devlogs/game-3/";
       }
       else {
         thirdgame.classList.replace("invisible", "visible");
         previousFace = faceIndexValue;
       }
     }
-    //For "4" face 
+    //4th Game
     else if ([18, 19].includes(faceIndexValue)) {
       if ([18, 19].includes(previousFace)) {
-        window.location.href = baseURL + "/game-4/";
+        window.location.href = "/devlogs/game-4/";
       }
       else {
         fourthgame.classList.replace("invisible", "visible");
         previousFace = faceIndexValue;
       }
     }
-    //For "5" face 
+    //5th Game
     else if ([58, 59].includes(faceIndexValue)) {
       if ([58, 59].includes(previousFace)) {
-        window.location.href = baseURL + "/devlogs/game-5/";
+        window.location.href = "/devlogs/game-5/";
       }
       else {
         fifthgame.classList.replace("invisible", "visible");
         previousFace = faceIndexValue;
       }
     }
-    //For "6" face 
+    //6th Game
     else if ([30, 31].includes(faceIndexValue)) {
       if ([30, 31].includes(previousFace)) {
-        window.location.href = baseURL + "/devlogs/game-6/";
+        window.location.href = "/devlogs/game-6/";
       }
       else {
         sixthgame.classList.replace("invisible", "visible");
