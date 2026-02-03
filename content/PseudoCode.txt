@@ -11,3 +11,7 @@ For Text on the left to appear:
 For Text on the left to dissapear:
 1. Raycaster value =/= value for side #
 2. document.getElementById('container-for-ui-_____').classList.add('hidden');
+
+For other stuff:
+
+2D Art Page: https://www.w3schools.com/css/css3_masking.asp 

@@ -7,7 +7,7 @@ description: My Games
 ---
 <script src="https://cdn.tailwindcss.com"></script>
 <head>
-  <!--Title-->
+<!--Title-->
   <div class="relative mb-[150px] w-screen" style="margin-left: calc(-50vw + 50%);">
     <svg width="650px" height="80px" class="drop-shadow-3xl">
         <rect width="650px" height="80px" fill="black"></rect>
@@ -16,7 +16,7 @@ description: My Games
   </div>
   <!--Center Container-->
   <div class="relative w-screen flex" style="margin-left: calc(-50vw + 50%);">
-    <!--Text Boxes UI (popout)-->
+  <!--Text Boxes UI (popout)-->
     <div class="flex-1 relative">
       <div class="absolute select-none pointer-events-none
         top-2 left-2
@@ -67,7 +67,7 @@ description: My Games
         </div>
       </div>
     </div>
-    <!--3D Cube-->
+<!--3D Cube-->
     <canvas id="sqr" class="block flex-shrink-0" width="1260" height="870"></canvas>
   </div>
 </head>
@@ -82,7 +82,7 @@ description: My Games
 </script>
 
 <script type="module">
-  //Importing
+//Importing
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
@@ -137,7 +137,6 @@ scene.add(light);
 const renderer = new THREE.WebGLRenderer({canvas: canvas, alpha: true}); //alpha overwrite's 3.js fallback baclground (above code) to the transparent background
 renderer.setSize(canvas.clientWidth, canvas.clientHeight); //uses my defined canvas size
 
-// Add this at the top with your other variables
 let loadedMesh = null;
 
 //Cube 3D Mesh
@@ -160,8 +159,8 @@ mtlLoader.load('/3DObjects/NavSqr.mtl', (mtl) => {
     //Add this line to store it globally
     loadedMesh = root;
 
-    //Add wireframe to visualize triangle edges
     /*
+    //Add wireframe to visualize triangle edges
     root.traverse((child) => {
       if (child.isMesh) {
         const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
@@ -171,15 +170,6 @@ mtlLoader.load('/3DObjects/NavSqr.mtl', (mtl) => {
       }
     });
     */
-
-    /*
-    //Debug code:
-    console.log("Loaded object type:", root.type);
-    console.log("Loaded object:", root);
-    console.log("Children:", root.children);
-    root.traverse((child) => {
-        console.log("Child type:", child.type, "Is Mesh:", child.isMesh);
-    });*/
 
     //Position camera based on object size
     const maxDimension = Math.max(size.x, size.y, size.z);
@@ -332,66 +322,6 @@ function dblclick (event) {
         sixthgame.classList.replace("invisible", "visible");
         previousFace = faceIndexValue;
       }
-      /*
-          if (faceIndexValue == [8, 9]) {
-      if (previousFace == [8, 9]) { //second click
-        window.location.href = baseURL + "/game-1/";
-      }
-      else { //first click
-        firstgame.classList.replace("invisible", "visible");
-        previousFace = [8, 9];
-      }
-    }
-    //For "2" face 
-    else if (faceIndexValue == [48, 49]) {
-      if (previousFace == [48, 49]) {
-        window.location.href = baseURL + "/game-2/";
-      }
-      else {
-        secondgame.classList.replace("invisible", "visible");
-        previousFace = [48, 49];
-      }
-    }
-    //For "3" face 
-    else if (faceIndexValue == [28, 29]) {
-      if (previousFace == [28, 29]) {
-        window.location.href = baseURL + "/game-3/";
-      }
-      else {
-        thirdgame.classList.replace("invisible", "visible");
-        previousFace = [28, 29];
-      }
-    }
-    //For "4" face 
-    else if (faceIndexValue == [18, 19]) {
-      if (previousFace == [18, 19]) {
-        window.location.href = baseURL + "/game-4/";
-      }
-      else {
-        fourthgame.classList.replace("invisible", "visible");
-        previousFace = [18, 19];
-      }
-    }
-    //For "5" face 
-    else if (faceIndexValue == [58, 59]) {
-      if (previousFace == [58, 59]) {
-        window.location.href = baseURL + "/devlogs/game-5/";
-      }
-      else {
-        fifthgame.classList.replace("invisible", "visible");
-        previousFace = [58, 59];
-      }
-    }
-    //For "6" face 
-    else if (faceIndexValue == [30, 31]) {
-      if (previousFace == [30, 31]) {
-        window.location.href = baseURL + "/devlogs/game-6/";
-      }
-      else {
-        sixthgame.classList.replace("invisible", "visible");
-        previousFace = [30, 31];
-      }
-      */
     }
     else {
       previousFace = null; //resets if clicking a different face
