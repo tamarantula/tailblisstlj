@@ -28,6 +28,10 @@ description: My 3D Art
             </div>
         </div>
     </div>
+<!--Videos / Pictures-->
+    <svg width="1230px" height="400px" class="drop-shadow-3xl">
+        <rect width="1230px" height="400px" fill="black"></rect>
+    </svg>
 </head>
 
 <script type="importmap">
